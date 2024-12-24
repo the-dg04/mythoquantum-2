@@ -22,6 +22,21 @@ function Service({ text }) {
   );
 }
 
+function GetInTouchButton() {
+  return (
+    <a
+      href="/contact"
+      className="mt-6 px-8 py-4 text-xl font-[500] inline-block w-fit text-white rounded-full transition hover:shadow-[0px_0px_40px_2px_#f6ad55]"
+      style={{
+        backgroundImage:
+          "linear-gradient(184.78deg,#0B409C 7.64%,#10316B 120.07%)",
+      }}
+    >
+      Get in touch
+    </a>
+  );
+}
+
 export default function Services() {
   return (
     <>
@@ -47,16 +62,7 @@ export default function Services() {
             <Service text="supply chain" />
             <Service text="product development" />
           </div>
-          <a
-            href="/contact"
-            className="mt-6 px-8 py-4 text-xl font-[500] inline-block w-fit text-white rounded-full transition hover:shadow-[0px_0px_40px_2px_#f6ad55]"
-            style={{
-              backgroundImage:
-                "linear-gradient(184.78deg,#0B409C 7.64%,#10316B 120.07%)",
-            }}
-          >
-            Get in touch
-          </a>
+          <GetInTouchButton />
         </div>
       </div>
     </>

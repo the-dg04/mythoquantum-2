@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white text-black fixed top-0 left-0 w-screen py-8 pr-10">
+      <nav className="bg-white text-black fixed top-0 left-0 w-screen py-8 pr-10 z-[10]">
         <div className="container w-full flex justify-between items-center">
           <a href="#" className="flex items-center w-[350px] ml-4">
             <Image src="/logo.webp" height={32} width={32} alt="image" />
@@ -22,38 +22,38 @@ export default function Navbar() {
           </a>
 
           <div className="hidden lg:flex gap-6 w-full justify-end">
-            <a href="#home" className="hover:text-blue-800 text-md font-bold">
+            <a href="/" className="hover:text-blue-800 text-md font-bold">
               Home
             </a>
-            <a href="#about" className="hover:text-blue-800 text-md font-bold">
+            <a href="/about" className="hover:text-blue-800 text-md font-bold">
               About
             </a>
             <a
-              href="#services"
+              href="/services"
               className="hover:text-blue-800 text-md font-bold"
             >
               Services
             </a>
             <a
-              href="#services"
+              href="/insights"
               className="hover:text-blue-800 text-md font-bold"
             >
               Insights
             </a>
             <a
-              href="#services"
+              href="/projects"
               className="hover:text-blue-800 text-md font-bold"
             >
               Projects
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="hover:text-blue-800 text-md font-bold"
             >
               Contact
             </a>
             <a
-              href="#contact"
+              href="/career"
               className="hover:text-blue-800 text-md font-bold"
             >
               Career
@@ -84,26 +84,26 @@ export default function Navbar() {
 
         {/* Dropdown Menu */}
         {menuOpen && (
-          <div className="lg:hidden mt-4 space-y-2">
-            <a href="#home" className="block hover:text-gray-400">
+          <div className="lg:hidden mt-4 space-y-2 w-full flex flex-col items-center">
+            <a href="/" className="block hover:text-blue-600 font-bold">
               Home
             </a>
-            <a href="#about" className="block hover:text-gray-400">
+            <a href="/about" className="block hover:text-blue-600 font-bold">
               About
             </a>
-            <a href="#services" className="block hover:text-gray-400">
+            <a href="/services" className="block hover:text-blue-600 font-bold">
               Services
             </a>
-            <a href="#services" className="block hover:text-gray-400">
+            <a href="/insights" className="block hover:text-blue-600 font-bold">
               Insights
             </a>
-            <a href="#services" className="block hover:text-gray-400">
+            <a href="/projects" className="block hover:text-blue-600 font-bold">
               Projects
             </a>
-            <a href="#contact" className="block hover:text-gray-400">
+            <a href="/contact" className="block hover:text-blue-600 font-bold">
               Contact
             </a>
-            <a href="#contact" className="block hover:text-gray-400">
+            <a href="/career" className="block hover:text-blue-600 font-bold">
               Career
             </a>
           </div>
