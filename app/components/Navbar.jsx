@@ -11,89 +11,106 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white text-black fixed top-0 left-0 w-screen py-8 pr-10">
-      <div className="container w-full flex justify-between items-center">
-        <a
-          href="#"
-          className="flex items-center w-[350px] ml-4"
-        >
-          <Image src="/logo.webp" height={32} width={32} alt="image" />
-          <div className="text-2xl font-[700] text-black ml-4">MythoQuantum</div>
-        </a>
+    <>
+      <nav className="bg-white text-black fixed top-0 left-0 w-screen py-8 pr-10">
+        <div className="container w-full flex justify-between items-center">
+          <a href="#" className="flex items-center w-[350px] ml-4">
+            <Image src="/logo.webp" height={32} width={32} alt="image" />
+            <div className="text-2xl font-[700] text-black ml-4">
+              MythoQuantum
+            </div>
+          </a>
 
-        <div className="hidden lg:flex gap-6 w-full justify-end">
-          <a href="#home" className="hover:text-blue-800 text-md font-bold">
-            Home
-          </a>
-          <a href="#about" className="hover:text-blue-800 text-md font-bold">
-            About
-          </a>
-          <a href="#services" className="hover:text-blue-800 text-md font-bold">
-            Services
-          </a>
-          <a href="#services" className="hover:text-blue-800 text-md font-bold">
-            Insights
-          </a>
-          <a href="#services" className="hover:text-blue-800 text-md font-bold">
-            Projects
-          </a>
-          <a href="#contact" className="hover:text-blue-800 text-md font-bold">
-            Contact
-          </a>
-          <a href="#contact" className="hover:text-blue-800 text-md font-bold">
-            Career
-          </a>
-        </div>
+          <div className="hidden lg:flex gap-6 w-full justify-end">
+            <a href="#home" className="hover:text-blue-800 text-md font-bold">
+              Home
+            </a>
+            <a href="#about" className="hover:text-blue-800 text-md font-bold">
+              About
+            </a>
+            <a
+              href="#services"
+              className="hover:text-blue-800 text-md font-bold"
+            >
+              Services
+            </a>
+            <a
+              href="#services"
+              className="hover:text-blue-800 text-md font-bold"
+            >
+              Insights
+            </a>
+            <a
+              href="#services"
+              className="hover:text-blue-800 text-md font-bold"
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-blue-800 text-md font-bold"
+            >
+              Contact
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-blue-800 text-md font-bold"
+            >
+              Career
+            </a>
+          </div>
 
-        {/* Hamburger Menu */}
-        <button
-          className="lg:hidden text-black focus:outline-none"
-          onClick={toggleMenu}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          {/* Hamburger Menu */}
+          <button
+            className="lg:hidden text-black focus:outline-none"
+            onClick={toggleMenu}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Dropdown Menu */}
-      {menuOpen && (
-        <div className="lg:hidden mt-4 space-y-2">
-          <a href="#home" className="block hover:text-gray-400">
-            Home
-          </a>
-          <a href="#about" className="block hover:text-gray-400">
-            About
-          </a>
-          <a href="#services" className="block hover:text-gray-400">
-            Services
-          </a>
-          <a href="#services" className="block hover:text-gray-400">
-            Insights
-          </a>
-          <a href="#services" className="block hover:text-gray-400">
-            Projects
-          </a>
-          <a href="#contact" className="block hover:text-gray-400">
-            Contact
-          </a>
-          <a href="#contact" className="block hover:text-gray-400">
-            Career
-          </a>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
         </div>
-      )}
-    </nav>
+
+        {/* Dropdown Menu */}
+        {menuOpen && (
+          <div className="lg:hidden mt-4 space-y-2">
+            <a href="#home" className="block hover:text-gray-400">
+              Home
+            </a>
+            <a href="#about" className="block hover:text-gray-400">
+              About
+            </a>
+            <a href="#services" className="block hover:text-gray-400">
+              Services
+            </a>
+            <a href="#services" className="block hover:text-gray-400">
+              Insights
+            </a>
+            <a href="#services" className="block hover:text-gray-400">
+              Projects
+            </a>
+            <a href="#contact" className="block hover:text-gray-400">
+              Contact
+            </a>
+            <a href="#contact" className="block hover:text-gray-400">
+              Career
+            </a>
+          </div>
+        )}
+      </nav>
+      <div className="spacer h-24"></div>
+    </>
   );
 }
 
