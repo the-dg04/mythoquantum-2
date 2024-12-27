@@ -14,8 +14,8 @@ export default function OurVision() {
           />
         </div>
         <div className="w-full h-full lg:h-screen flex flex-col justify-center items-center p-2">
-          <div className="text-5xl font-[700] w-full py-4">Our Vision</div>
-          <div className="text-lg font-[400] text-gray-400 w-full mt-6">
+          <div className="text-5xl  w-full py-4">Our Vision</div>
+          <div className="text-lg  text-gray-400 w-full mt-6">
             At MythoQuantum Explorers, we pride ourselves on our commitment to
             innovation and technological expertise. Our renowned Data Science
             Lab is a testament to our dedication. Through our Research and

@@ -7,18 +7,22 @@ import Reviews from "./landingPage/Reviews";
 import Empower from "./components/Empower";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Slider from "./landingPage/Slider";
+import Clients from "./landingPage/Clients";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center font-serif w-full">
+        <Slider />
+      <div className="flex flex-col items-center w-full bg-[#6A9AB0]">
         <Hero />
-        <WhoWeAre />
         <Services />
-        <OurVision />
-        <HarnessPower />
+        <Clients />
         <Reviews />
+        {/* <WhoWeAre />
+        <OurVision />
+        <HarnessPower /> */}
         <Empower />
         <Footer />
       </div>

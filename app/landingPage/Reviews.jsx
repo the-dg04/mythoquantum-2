@@ -1,19 +1,37 @@
+"use client";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 function ReviewCard({ name, title, text, img_src }) {
   return (
-    <div className="w-[350px] h-full border border-black flex-shrink-0 flex flex-col p-4 rounded-md">
+    <div className="w-[300px] sm:w-[350px] h-[500px] bg-[#3A6D8C] text-[#EAD8B1] flex-shrink-0 flex flex-col justify-center items-center p-4 rounded-md relative">
       <div className="h-[150px] flex justify-center">
         <Image src={img_src} width={150} height={150} alt="image" />
       </div>
-      <div className="text-xl w-full text-center">{name}</div>
-      <div className="text-lg text-gray-700 w-full text-center">{title}</div>
-      <div className="text-lg text-gray-500 w-full text-center text-wrap h-full overflow-y-scroll no-scrollbar">
+      <div className="text-xl w-full font-bold text-center px-10">{name}</div>
+      <div className="text-lg w-full text-center px-10">{title}</div>
+      <div className="text-sm w-full text-center text-wrap h-full overflow-y-scroll no-scrollbar px-10">
         {text}
       </div>
+      <motion.div
+        className="absolute font-serif text-[180px] font-extrabold top-[-80px] left-[-20px] opacity-40"
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+      >
+        &#8220;
+      </motion.div>
+      <motion.div
+        className="absolute font-serif text-[180px] font-extrabold bottom-[-160px] right-[-20px] opacity-40"
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+      >
+        &#8221;
+      </motion.div>
     </div>
   );
 }
+
+// w-[100px] h-[100px] right-[-70px] bg-[#EAD8B1] z-[2] rounded-full opacity-60
 
 export default function Reviews() {
   const data = [
@@ -50,10 +68,15 @@ export default function Reviews() {
   ];
   return (
     <>
-      <div className="text-5xl font-[700] w-full py-4 px-6">
-        People have nice things to say about us
-      </div>
-      <div className="w-full h-[500px] overflow-x-scroll no-scrollbar flex gap-4 p-6">
+      <motion.div
+        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F] mb-6"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, type: "spring" }}
+      >
+        Testimonials
+      </motion.div>
+      <div className="w-full h-[850px] overflow-x-scroll no-scrollbar flex items-center gap-20 px-10 relative">
         {data.map((item, id) => (
           <ReviewCard
             key={id}

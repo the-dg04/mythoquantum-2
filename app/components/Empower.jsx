@@ -1,26 +1,40 @@
+"use client";
+import { motion } from "motion/react";
+
 export default function Empower() {
   return (
     <>
       <div
-        className="xl:w-[1280px] flex lg:flex-row flex-col lg:justify-center items-center text-white w-[90vw] min-h-[400px] rounded-3xl my-20"
-        style={{
-          backgroundImage:
-            "linear-gradient(184.78deg, #0B409C 7.64%, #10316B 120.07%)",
-        }}
+        className="xl:w-[1280px] flex lg:flex-row flex-col lg:justify-center items-center text-[#EAD8B1] w-[90vw] min-h-[400px] rounded-3xl mb-20 bg-gradient-to-br from-[#001F3F] via-[#3A6D8C] to-[#EAD8B1]"
+        // initial={{x:-50,opacity:0}}
+        // whileInView={{x:0,opacity:1}}
+        // transition={{duration:1,type:"spring"}}
       >
         <div className="w-full h-full flex flex-col justify-center p-2">
-          <div className="text-5xl font-[700] w-full p-10">
-            Empowering Decisions Engineering Futures
-          </div>
+          <motion.div
+            className="text-5xl font-[700] w-full p-10"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: "spring" }}
+          >
+            Ready to see the difference? Request your demo today!
+          </motion.div>
           <a
             href="/contact"
-            className="mt-6 ml-10 px-8 py-4 text-xl font-[500] inline-block w-fit rounded-full transition hover:shadow-[0px_0px_40px_2px_#f6ad55] bg-white text-black"
+            className="mt-6 ml-10 px-8 py-4 text-xl font-[500] inline-block w-fit rounded-full transition hover:shadow-[0px_0px_40px_2px_#EAD8B1] bg-white text-black"
           >
-            Get in touch
+            Request Demo
           </a>
         </div>
-        <div className="w-full h-full flex flex-col max-lg:p-12">
-          <div>Where data dreams become blueprints for the future.</div>
+        <div className="w-full h-full flex justify-center items-center max-lg:p-12">
+          <motion.img
+            src="https://placehold.co/400x400"
+            alt="image"
+            className="w-[200px] h-[200px] object-cover"
+            initial={{scale:0}}
+            whileInView={{scale:1}}
+            transition={{duration:1,type:"spring"}}
+          />
         </div>
       </div>
     </>
