@@ -187,8 +187,8 @@ export default function Navbar  () {
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
+          <img src="/logo2.png" alt="" className='object-contain w-8 mr-2'/>
             <div className="text-[#EAD8B1] font-bold text-xl">MythoQuantum</div>
           </div>
 
