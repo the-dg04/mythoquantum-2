@@ -32,7 +32,7 @@ export default function Clients() {
         setCurrentIndex((prevIndex) =>
           prevIndex === clients.length - 1 ? 0 : prevIndex + 1
         );
-      }, 3000);
+      }, 1000);
     }
     return () => clearInterval(interval);
   }, [isPlaying, clients.length]);

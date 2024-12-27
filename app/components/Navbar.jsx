@@ -248,7 +248,7 @@ export default function Navbar  () {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {mainMenuItems.map((item) => (
               <div key={item.label}>
-                <button className="block px-3 py-2 text-base font-medium text-[#EAD8B1] hover:text-white hover:bg-gray-50 w-full text-left">
+                <button className="block px-3 py-2 text-base font-bold text-[#EAD8B1] hover:text-black hover:bg-gray-50 w-full text-left">
                   {item.label}
                 </button>
                 <div className="pl-4">
@@ -256,7 +256,7 @@ export default function Navbar  () {
                     <a
                       key={subItem}
                       href="#"
-                      className="block px-3 py-2 text-sm text-gray-600 hover:text-white hover:bg-gray-50"
+                      className="block px-3 py-2 text-[#EAD8B1] text-sm hover:text-black hover:bg-gray-50"
                     >
                       {subItem}
                     </a>
