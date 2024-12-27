@@ -176,10 +176,10 @@ export default function Navbar  () {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const mainMenuItems = [
-    { label: 'Services', submenu: ['Audit & Assurance', 'Consulting', 'Tax', 'Risk Advisory'] },
-    { label: 'Industries', submenu: ['Financial Services', 'Technology', 'Energy', 'Healthcare'] },
-    { label: 'Insights', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] },
-    { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at Deloitte', 'Apply Now'] }
+    { label: 'Services', submenu: ['About', 'Audit', 'Tax', 'Risk Advisory'] ,src:['/about','#','#','#']},
+    { label: 'Industries', submenu: ['Financial Services', 'Technology', 'Energy', 'Healthcare'] ,src:['#','#','#','#']},
+    { label: 'Insights', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] ,src:['#','#','#','#']},
+    { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at Deloitte', 'Apply Now'],src:['#','#','#','#'] }
   ];
 
   return (
@@ -187,14 +187,14 @@ export default function Navbar  () {
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 flex items-center">
+          <a href="/" className="flex-shrink-0 flex items-center">
           <img src="/logo2.png" alt="" className='object-contain w-10 mr-2'/>
             <div className="text-[#EAD8B1] font-bold text-xl">MythoQuantum</div>
-          </div>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-8">
-            {mainMenuItems.map((item) => (
+            {mainMenuItems.map((item,idx) => (
               <div key={item.label} className="group">
                 <button className="text-[#EAD8B1] hover:text-white hover:underline underline-offset-8 decoration-green-500 px-3 py-2 text-sm font-medium">
                   {item.label}
@@ -203,10 +203,10 @@ export default function Navbar  () {
                 <div className="absolute left-0 z-10 scale-y-0 origin-top group-hover:scale-y-100 transition-all duration-[0.5s] w-full bg-[#001F3F] shadow-lg">
                   <div className="flex">
                   <div className="py-10 px-4 w-2/3">
-                    {item.submenu.map((subItem) => (
+                    {item.submenu.map((subItem,index) => (
                       <a
                         key={subItem}
-                        href="#"
+                        href={mainMenuItems[idx].src[index]}
                         className="block px-4 py-4 text-xl text-[#EAD8B1] hover:underline underline-offset-8 transition-all duration-1000 decoration-green-500"
                       >
                         {subItem}
@@ -246,16 +246,16 @@ export default function Navbar  () {
       {isMenuOpen && (
         <div className="lg:hidden h-[100vh] overflow-y-scroll no-scrollbar py-2">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {mainMenuItems.map((item) => (
+            {mainMenuItems.map((item,idx) => (
               <div key={item.label}>
                 <button className="block px-3 py-2 text-base font-bold text-[#EAD8B1] hover:text-black hover:bg-gray-50 w-full text-left">
                   {item.label}
                 </button>
                 <div className="pl-4">
-                  {item.submenu.map((subItem) => (
+                  {item.submenu.map((subItem,index) => (
                     <a
                       key={subItem}
-                      href="#"
+                      href={mainMenuItems[idx].src[index]}
                       className="block px-3 py-2 text-[#EAD8B1] text-sm hover:text-black hover:bg-gray-50"
                     >
                       {subItem}

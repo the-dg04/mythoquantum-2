@@ -33,9 +33,11 @@ export default function Hero() {
     <>
       <div className="w-full h-[200vh] relative overflow-x-clip" ref={targetRef}>
         <motion.div
-          className="w-full h-[90vh] sticky top-16 md:origin-top-left origin-top bg-[url('https://placehold.co/800x400')] bg-cover bg-center"
+          className="w-full h-[calc(100vh-64px)] sticky top-16 md:origin-top-left origin-top bg-[url('/aboutBg.jpg')] bg-cover bg-center flex items-center justify-center"
           style={{ scale: scaleProgress }}
-        ></motion.div>
+        >
+          <div className="sm:text-[80px] text-[60px] font-[900] text-white drop-shadow-[0_1.2px_5px_rgba(0,0,0,0.8)]">About us</div>
+        </motion.div>
         <motion.div
           className="absolute bottom-0 md:bottom-16 left-[2.5vw] md:left-auto md:right-10 w-[90vw] md:w-[30vw] z-[2]"
           style={{ opacity: opacityProgress }}

@@ -7,13 +7,26 @@ function Card() {
     <>
       <div className="lg:w-1/4 w-[80%] bg-[#3A6D8C] h-[500px] rounded-lg flex flex-col items-center overflow-hidden shadow-lg relative">
         <div className="w-full h-fit p-10 text-4xl font-[600] text-[#EAD8B1]">
-        Service<br />name
+          Service
+          <br />
+          name
         </div>
         <div className="w-full h-fit px-10 text-xl font-[600] text-[#EAD8B1]">
-        Description
+          Description
         </div>
-        <motion.a href="#" className="absolute bottom-10 z-[2] px-4 py-2 rounded-lg font-bold text-[#EAD8B1] hover:scale-110 bg-[#3A6D8C] transition-all" initial={{opacity:0}} whileInView={{opacity:1}}>Learn more</motion.a>
-        <motion.div className="absolute h-[400px] lg:h-[20vw] w-[400px] lg:w-[20vw] bottom-[-180px] lg:bottom-[-7vw] bg-[#EAD8B1] rounded-t-full" initial={{y:'100px'}} whileInView={{y:'0'}}></motion.div>
+        <motion.a
+          href="#"
+          className="absolute bottom-10 z-[2] px-4 py-2 rounded-lg font-bold text-[#EAD8B1] hover:scale-110 bg-[#3A6D8C] transition-all"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          Learn more
+        </motion.a>
+        <motion.div
+          className="absolute h-[400px] lg:h-[20vw] w-[400px] lg:w-[20vw] bottom-[-180px] lg:bottom-[-7vw] bg-[#EAD8B1] rounded-t-full"
+          initial={{ y: "100px" }}
+          whileInView={{ y: "0" }}
+        ></motion.div>
       </div>
     </>
   );
