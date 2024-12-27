@@ -30,7 +30,7 @@ export default function Empower() {
           <motion.img
             src="https://placehold.co/400x400"
             alt="image"
-            className="w-[200px] h-[200px] object-cover"
+            className="w-[200px] h-[200px] object-cover rounded-lg"
             initial={{scale:0}}
             whileInView={{scale:1}}
             transition={{duration:1,type:"spring"}}
