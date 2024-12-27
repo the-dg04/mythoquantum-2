@@ -8,8 +8,9 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center font-serif w-full text-black bg-blue-50 pt-10">
-        <CurrentRouteCard route="About" />
+      <div className="flex flex-col items-center w-full bg-[#6A9AB0]">
+      <div className="h-16"></div>
+        {/* <CurrentRouteCard route="About" /> */}
         <Hero />
         <Achievements />
         <WhoWeAre />

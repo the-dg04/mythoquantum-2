@@ -20,9 +20,6 @@ export default function Home() {
         <Services />
         <Clients />
         <Reviews />
-        {/* <WhoWeAre />
-        <OurVision />
-        <HarnessPower /> */}
         <Empower />
         <Footer />
       </div>

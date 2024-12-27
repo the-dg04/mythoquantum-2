@@ -1,50 +1,53 @@
-function AchievementCard({ number, plusColor, text, noBorder }) {
+"use client";
+import { motion } from "motion/react";
+
+function AchievementCard({ number, text }) {
   return (
-    <div
-      className={`w-full lg:h-[60%] h-full lg:${noBorder===true?"":"border-r"} border-yellow-500 flex flex-col items-center justify-center`}
+    <motion.div
+      className="w-full bg-[#3A6D8C] rounded-lg h-full border-yellow-500 flex flex-col items-center justify-center relative"
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, type: "spring" }}
     >
-      <div className="text-4xl font-bold">
-        {number} <span className={plusColor}>+</span>
-      </div>
-      <div className="text-md text-gray-500">{text}</div>
-    </div>
+      <motion.div
+        className="text-4xl font-bold w-20 h-20 flex items-center justify-center aspect-square rounded-full bg-[#EAD8B1] text-[#001F3F]"
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.3, type: "spring" }}
+      >
+        {number}+
+      </motion.div>
+      <div className="text-md text-[#EAD8B1] absolute bottom-1">{text}</div>
+    </motion.div>
   );
 }
 
 export default function Achievements() {
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-4 bg-white lg:w-[80vw] w-[90vw] mt-10 rounded-xl shadow-[0px_0px_40px_2px_lightgrey] text-black font-mono mb-10">
-        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 lg:h-[150px] h-[100px] flex items-center">
+      <div className="grid grid-cols-4 grid-rows-4 lg:w-[80vw] w-[90vw] mt-10 rounded-xl text-black font-mono mb-10 z-[2] gap-4">
+        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 h-[150px] flex items-center">
           <AchievementCard
             number={10}
-            plusColor="text-blue-400"
             text="Customers"
-            noBorder={false}
           />
         </div>
-        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 lg:h-[150px] h-[100px] flex items-center">
+        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 h-[150px] flex items-center">
           <AchievementCard
             number={22}
-            plusColor="text-green-400"
             text="Projects"
-            noBorder={false}
           />
         </div>
-        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 lg:h-[150px] h-[100px] flex items-center">
+        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 h-[150px] flex items-center">
           <AchievementCard
             number={4}
-            plusColor="text-orange-400"
             text="Achievements"
-            noBorder={false}
           />
         </div>
-        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 lg:h-[150px] h-[100px] flex items-center">
+        <div className="lg:row-span-4 md:row-span-2 row-span-1 lg:col-span-1 md:col-span-2 col-span-4 h-[150px] flex items-center">
           <AchievementCard
             number={2}
-            plusColor="text-yellow-400"
             text="Datasets"
-            noBorder={true}
           />
         </div>
       </div>
