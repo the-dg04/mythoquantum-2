@@ -2,14 +2,16 @@
 import { useState } from 'react';
 import { Menu, X, Search, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { ServicesData } from '../services/data';
 
 export default function Navbar  () {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const Services=ServicesData;
 
   const mainMenuItems = [
     { label: 'About', submenu: ['About Us', 'Our Team', 'Contact Us'] ,src:['/about','/about/#team','/contact']},
     { label: 'Projects', submenu: ['All Projects','Completed', 'Ongoing', 'Upcoming'] ,src:['/projects','/projects/#completed','/projects/#ongoing','/projects/#upcoming']},
-    { label: 'Services', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] ,src:['#','#','#','#']},
+    { label: 'Services', submenu: Services.map((val)=>val['name']) ,src:Services.map((val,idx)=>`/services/${idx}`)},
     { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at MythoQuantum', 'Apply Now'],src:['#','#','#','#'] }
   ];
 
@@ -36,7 +38,7 @@ export default function Navbar  () {
                   <div className="py-10 px-4 w-2/3">
                     {item.submenu.map((subItem,index) => (
                       <Link
-                        key={subItem}
+                        key={index}
                         // scroll={false}
                         href={mainMenuItems[idx].src[index]}
                         className="block px-4 py-4 text-xl text-[#EAD8B1] hover:underline underline-offset-8 transition-all duration-1000 decoration-green-500"

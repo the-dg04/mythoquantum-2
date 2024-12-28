@@ -1,22 +1,20 @@
 "use client";
 import { motion } from "motion/react";
-import Image from "next/image";
 import Heading from "../components/Heading";
+import { ServicesData } from "../services/data";
 
-function Card() {
+function Card({ name, description, index }) {
   return (
     <>
-      <div className="lg:w-1/4 w-[80%] bg-[#3A6D8C] h-[500px] rounded-lg flex flex-col items-center overflow-hidden shadow-lg relative">
+      <div className="lg:w-1/4 w-[80%] bg-[#3A6D8C] h-[400px] rounded-lg flex flex-col items-center overflow-hidden shadow-lg relative">
         <div className="w-full h-fit p-10 text-4xl font-[600] text-[#EAD8B1]">
-          Service
-          <br />
-          name
+          {name}
         </div>
-        <div className="w-full h-fit px-10 text-xl font-[600] text-[#EAD8B1]">
-          Description
-        </div>
+        {/* <div className="w-full h-fit px-10 text-sm font-[600] text-[#EAD8B1]">
+          {description}
+        </div> */}
         <motion.a
-          href="#"
+          href={`/services/${index}`}
           className="absolute bottom-10 z-[2] px-4 py-2 rounded-lg font-bold text-[#EAD8B1] hover:scale-110 bg-[#3A6D8C] transition-all"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -34,14 +32,14 @@ function Card() {
 }
 
 export default function Services() {
+  const data = ServicesData;
   return (
     <>
       <Heading text="Services we offer" id="services" />
       <motion.div className="w-[90vw] xl:w-[1200px] flex lg:flex-row flex-col items-center justify-center gap-8 py-8">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data.map((item, idx) => (
+          <Card key={idx} {...item} index={idx} />
+        ))}
       </motion.div>
     </>
   );
