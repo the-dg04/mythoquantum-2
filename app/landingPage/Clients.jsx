@@ -56,7 +56,7 @@ export default function Clients() {
 
   return (
     <div className="relative lg:w-[60vw] w-[80vw] max-w-4xl mx-auto my-20 h-[80vh]" ref={containerRef}>
-      <Heading text="Our clients Projects" id="clients" />
+      <Heading text="Our clients" id="clients" />
       <div className="relative h-96 rounded-lg top-20">
         <div
           className="flex transition-transform duration-500 ease-out h-full gap-10"
