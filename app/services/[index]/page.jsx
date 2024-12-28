@@ -46,11 +46,12 @@ function Capability({ text }) {
   return (
     <>
       <motion.div
-        className="w-[300px] h-[200px] bg-[#EAD8B1] rounded-lg flex-shrink-0 flex justify-center items-center shadow-lg p-4 text-lg text-center"
+        className="w-[300px] h-[200px] bg-[#EAD8B1] rounded-lg flex-shrink-0 flex justify-center items-center shadow-lg p-4 text-lg text-center relative"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
       >
         {text}
+        <motion.div className="absolute w-[60%] h-[5px] rounded-full bg-[#6A9AB0] bottom-2" initial={{y:16}} whileInView={{y:0}} transition={{delay:0.2}}></motion.div>
       </motion.div>
     </>
   );

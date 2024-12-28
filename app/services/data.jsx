@@ -1,6 +1,18 @@
 export const ServicesData = [
   {
     img_src: "https://placehold.co/600x400",
+    alt: "Slide 4",
+    name: "Innovative R&D",
+    description:
+      "Our R&D expertise fuels groundbreaking solutions tailored to the needs of finance, healthcare, and supply chain sectors. From developing sustainable strategies to exploring emerging technologies, we turn challenges into opportunities.",
+    capabilities: [
+      "PCustomized research frameworks for finance and healthcare.",
+      "Cutting-edge solutions for operational efficiency in supply chains.",
+      "Sustainable innovation to stay ahead in competitive markets.",
+    ],
+  },
+  {
+    img_src: "https://placehold.co/600x400",
     alt: "Slide 1",
     name: "Data Analytics & AI",
     description:
@@ -35,16 +47,4 @@ export const ServicesData = [
       "Workflow automation for seamless supply chain operations.",
     ],
   },
-  //   {
-  //     img_src: "https://placehold.co/600x400",
-  //     alt: "Slide 4",
-  //     name: "Service Name",
-  //     description: "Description",
-  //     capabilities: [
-  //       "Capability 1",
-  //       "Capability 2",
-  //       "Capability 3",
-  //       "Capability 4",
-  //     ],
-  //   },
 ];
