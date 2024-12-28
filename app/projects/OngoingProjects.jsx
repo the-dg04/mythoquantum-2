@@ -1,42 +1,81 @@
-import Image from "next/image";
+"use client";
+import { motion } from "motion/react";
 
-function Card({ title, img_src,category, link }) {
+function Card({ title, text, category, link, img_src }) {
   return (
-    <a
-      href={link}
-      className="flex flex-col items-center w-[80vw] xl:w-[60vw] rounded-lg bg-white shadow-[0px_0px_20px_0px_lightgrey] p-16 gap-4 font-sans"
-    >
-      <div className="w-full">
-        <Image src={img_src} width={800} height={0} className="object-cover" alt="image"/>
+    <>
+      <div className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
+        <img
+          src={img_src}
+          alt=""
+          className="w-full h-full object-cover object-center absolute top-0 group-hover:scale-[2] origin-top-left transition-all"
+        />
+        <div className="absolute w-full h-full group-hover:backdrop-blur-xl transition-all p-4 text-white">
+          <div className="w-full text-lg font-[600] font-mono underline py-2">
+            {category}
+          </div>
+          <div className="w-full text-xl font-[600]">{title}</div>
+          <div className="w-full relative text-md left-[120%] group-hover:left-0 p-4 transition-all">
+            {text}
+          </div>
+          <a
+            href={link}
+            className="absolute bottom-[-20px] group-hover:bottom-[8px] transition-all right-2 text-right font-[600] underline underline-offset-2 decoration-green-500"
+          >
+            Learn more
+          </a>
+        </div>
       </div>
-
-      <div className="w-full text-2xl">{title}</div>
-      {/* <div className="w-full text-lg text-gray-500">{text}</div> */}
-      <div className="w-full text-xl font-bold font-sans text-gray-400 border border-gray-400 text-center mt-4 p-2">{category}</div>
-    </a>
+    </>
   );
 }
 
-export default function OngoingProjects() {
+export default function CompletedProjects() {
   const data = [
     {
-      title: "Behavioural Finance and Time Series Analysis: Exploring Interactions and Identifying Gaps.",
-      img_src: "https://cdn.sanity.io/images/6uwkd8vj/production/20ae76ef0528201732c77e6013743487463b00ae-1920x1080.png",
-      category: "Financial Management",
+      title:
+        "Building a Smarter Healthcare System: The Role of AI and Big Data",
+      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
+      category: "Healthcare",
+      img_src: "/aboutBg.jpg",
       link: "#",
     },
     {
-      title: "Behavioural Finance and Time Series Analysis: Exploring Interactions and Identifying Gaps.",
-      img_src: "https://cdn.sanity.io/images/6uwkd8vj/production/20ae76ef0528201732c77e6013743487463b00ae-1920x1080.png",
-      category: "Financial Management",
+      title:
+        "Building a Smarter Healthcare System: The Role of AI and Big Data",
+      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
+      category: "Healthcare",
+      img_src: "/aboutBg.jpg",
+      link: "#",
+    },
+    {
+      title:
+        "Building a Smarter Healthcare System: The Role of AI and Big Data",
+      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
+      category: "Healthcare",
+      img_src: "/aboutBg.jpg",
+      link: "#",
+    },
+    {
+      title:
+        "Building a Smarter Healthcare System: The Role of AI and Big Data",
+      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
+      category: "Healthcare",
+      img_src: "/aboutBg.jpg",
       link: "#",
     },
   ];
   return (
     <>
-      <div className="text-3xl underline font-bold my-10 text-center mt-16">
+      <motion.div
+        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F] mb-8 pt-32"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, type: "spring" }}
+        id="ongoing"
+      >
         Ongoing Projects
-      </div>
+      </motion.div>
       <div className="w-full lg:px-10 my-10 flex justify-center items-center flex-wrap gap-8">
         {data.map((props, id) => (
           <Card key={id} {...props} />
