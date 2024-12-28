@@ -8,9 +8,9 @@ export default function Navbar  () {
 
   const mainMenuItems = [
     { label: 'Services', submenu: ['About', 'Audit', 'Tax', 'Risk Advisory'] ,src:['/about','#','#','#']},
-    { label: 'Projects', submenu: ['Completed', 'Ongoing', 'Upcoming'] ,src:['/projects/#completed','/projects#ongoing','/projects/#upcoming']},
+    { label: 'Projects', submenu: ['Completed', 'Ongoing', 'Upcoming'] ,src:['/projects/#completed','/projects/#ongoing','/projects/#upcoming']},
     { label: 'Insights', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] ,src:['#','#','#','#']},
-    { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at Deloitte', 'Apply Now'],src:['#','#','#','#'] }
+    { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at MythoQuantum', 'Apply Now'],src:['#','#','#','#'] }
   ];
 
   return (
