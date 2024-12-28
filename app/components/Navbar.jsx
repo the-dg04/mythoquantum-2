@@ -7,9 +7,9 @@ export default function Navbar  () {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const mainMenuItems = [
-    { label: 'About', submenu: ['About Us', 'Our Team', 'Contact Us'] ,src:['/about','/about/#team','#']},
+    { label: 'About', submenu: ['About Us', 'Our Team', 'Contact Us'] ,src:['/about','/about/#team','/contact']},
     { label: 'Projects', submenu: ['All Projects','Completed', 'Ongoing', 'Upcoming'] ,src:['/projects','/projects/#completed','/projects/#ongoing','/projects/#upcoming']},
-    { label: 'Insights', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] ,src:['#','#','#','#']},
+    { label: 'Services', submenu: ['Featured Insights', 'Research', 'Case Studies', 'Articles'] ,src:['#','#','#','#']},
     { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at MythoQuantum', 'Apply Now'],src:['#','#','#','#'] }
   ];
 
