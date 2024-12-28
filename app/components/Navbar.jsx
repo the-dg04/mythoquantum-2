@@ -12,7 +12,7 @@ export default function Navbar  () {
     { label: 'About', submenu: ['About Us', 'Our Team', 'Contact Us'] ,src:['/about','/about/#team','/contact']},
     { label: 'Projects', submenu: ['All Projects','Completed', 'Ongoing', 'Upcoming'] ,src:['/projects','/projects/#completed','/projects/#ongoing','/projects/#upcoming']},
     { label: 'Services', submenu: Services.map((val)=>val['name']) ,src:Services.map((val,idx)=>`/services/${idx}`)},
-    { label: 'Careers', submenu: ['Students', 'Experienced Hires', 'Life at MythoQuantum', 'Apply Now'],src:['#','#','#','#'] }
+    { label: 'Careers', submenu: ['Careers'],src:['/careers'] }
   ];
 
   return (
