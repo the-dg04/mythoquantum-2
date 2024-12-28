@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { Car, Linkedin } from "lucide-react";
+import Heading from "../components/Heading";
 
 function Card({ name, position, linkedin, img_src }) {
   return (
@@ -78,14 +79,7 @@ export default function Team() {
 
   return (
     <>
-      <motion.div
-        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F] mt-16"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-      >
-        Our Team
-      </motion.div>
+      <Heading text="Our team" id="team" />
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-10 flex-wrap my-8">
         {data.map((item,index)=>
             <Card key={index} {...item} />

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "motion/react";
+import Heading from "../components/Heading";
 
 export default function Clients() {
     const containerRef = useRef(null)
@@ -55,14 +56,7 @@ export default function Clients() {
 
   return (
     <div className="relative lg:w-[60vw] w-[80vw] max-w-4xl mx-auto my-20 h-[80vh]" ref={containerRef}>
-      <motion.div
-        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F]"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-      >
-        Our Clients
-      </motion.div>
+      <Heading text="Our clients Projects" id="clients" />
       <div className="relative h-96 rounded-lg top-20">
         <div
           className="flex transition-transform duration-500 ease-out h-full gap-10"

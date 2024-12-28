@@ -1,5 +1,4 @@
-"use client";
-import { motion } from "motion/react";
+import Heading from "../components/Heading";
 
 function Card({ title, text, category, link, img_src }) {
   return (
@@ -67,15 +66,7 @@ export default function CompletedProjects() {
   ];
   return (
     <>
-      <motion.div
-        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F] mb-8 pt-32"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-        id="ongoing"
-      >
-        Ongoing Projects
-      </motion.div>
+      <Heading text="Ongoing Projects" id="ongoing" />
       <div className="w-full lg:px-10 my-10 flex justify-center items-center flex-wrap gap-8">
         {data.map((props, id) => (
           <Card key={id} {...props} />

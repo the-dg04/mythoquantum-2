@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Heading from "../components/Heading";
 
 function Card() {
   return (
@@ -35,14 +36,7 @@ function Card() {
 export default function Services() {
   return (
     <>
-      <motion.div
-        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F]"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-      >
-        Services We Offer
-      </motion.div>
+      <Heading text="Services we offer" id="services" />
       <motion.div className="w-[90vw] xl:w-[1200px] flex lg:flex-row flex-col items-center justify-center gap-8 py-8">
         <Card />
         <Card />

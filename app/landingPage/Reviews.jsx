@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Heading from "../components/Heading";
 
 function ReviewCard({ name, title, text, img_src }) {
   return (
@@ -68,14 +69,7 @@ export default function Reviews() {
   ];
   return (
     <>
-      <motion.div
-        className="w-full text-center text-3xl md:text-4xl font-[500] underline underline-offset-8 text-[#001F3F]"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-      >
-        Testimonials
-      </motion.div>
+      <Heading text="Testimonials" id="testimonials" />
       <div className="w-full h-[600px] overflow-x-scroll no-scrollbar flex items-center gap-20 px-10 relative mark">
         {data.map((item, id) => (
           <ReviewCard
