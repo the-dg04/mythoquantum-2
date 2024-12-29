@@ -5,6 +5,7 @@ import SideBar from "./SideBar";
 import ProjectContext from "./ProjectContext";
 import LoadingContext from "./LoadingContext";
 import Editor from "./Editor"
+import dynamic from "next/dynamic";
 // export const dynamic = "force-dynamic";
 export default function uitest() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -30,6 +31,7 @@ export default function uitest() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+//   const Editor=dynamic(()=>import('./Editor'),{ssr:false})
 
   return (
     <LoadingContext.Provider value={{loading,startLoad,endLoad}}>

@@ -40,8 +40,16 @@ export default function BlockNote() {
     getContent();
   }, [activeProjectId]);
 
-  const editor = useCreateBlockNote();
-  const [content, setContent] = useState([]);
+  let editor = null;
+  if (typeof document !== 'undefined') {
+    editor = useCreateBlockNote();
+  }
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 20);
+  }, []);
 
   const handleSave = async () => {
     startLoad();
@@ -117,11 +125,13 @@ export default function BlockNote() {
         </select>
       </div>
       <div className="text-xl p-4">Body</div>
-      <BlockNoteView
-        editor={editor}
-        theme="light"
-        style={{ height: "100%", border: "1px solid black" }}
-      />
+      {!loading && (
+        <BlockNoteView
+          editor={editor}
+          theme="light"
+          style={{ height: "100%", border: "1px solid black" }}
+        />
+      )}
     </>
   );
 }
