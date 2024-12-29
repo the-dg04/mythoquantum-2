@@ -30,7 +30,7 @@ function Card({ title, description, category, _id, imgUrl }) {
 export default function Projects({ data }) {
   return (
     <>
-      <Heading text="Upcoming Projects" id="completed" />
+      <Heading text="Upcoming Projects" id="upcoming" />
         {data.length==0 && <div>Fetching...</div>}
       <div className="w-full lg:px-10 my-10 flex justify-center items-center flex-wrap gap-8">
         {data.map((props, id) => (
