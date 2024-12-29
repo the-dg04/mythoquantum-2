@@ -55,14 +55,14 @@ export default function Navbar  () {
           </div>
 
           {/* Right Side Icons */}
-          {/* <div className="hidden lg:flex items-center space-x-6">
-            <button className="text-[#EAD8B1] hover:text-white">
+          <div className="hidden lg:flex items-center space-x-6 h-5 w-16">
+            {/* <button className="text-[#EAD8B1] hover:text-white">
               <Search className="h-5 w-5" />
             </button>
             <button className="text-[#EAD8B1] hover:text-white">
               <Globe className="h-5 w-5" />
-            </button>
-          </div> */}
+            </button> */}
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
