@@ -78,7 +78,7 @@ export default function BlockNote() {
           Save
         </button>
       </div>
-      <input
+      <textarea
         type="text"
         className="border border-black w-full"
         value={description}
