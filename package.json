@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@blocknote/core": "^0.22.0",
+    "@blocknote/mantine": "^0.22.0",
+    "@blocknote/react": "^0.22.0",
     "@popmotion/popcorn": "^0.4.4",
     "@vercel/analytics": "^1.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.469.0",
+    "mongoose": "^8.9.2",
     "motion": "^11.15.0",
     "next": "15.1.2",
     "react": "^19.0.0",

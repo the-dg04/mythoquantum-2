@@ -1,72 +1,37 @@
 import Heading from "../components/Heading";
 
-function Card({ title, text, category, link, img_src }) {
+function Card({ title, description, category, _id, imgUrl }) {
   return (
     <>
-      <div className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
+      <a href={"#"} className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
         <img
-          src={img_src}
+          src={imgUrl || ""}
           alt=""
           className="w-full h-full object-cover object-center absolute top-0 group-hover:scale-[2] origin-top-left transition-all"
         />
         <div className="absolute w-full h-full group-hover:backdrop-blur-xl transition-all p-4 text-white">
-          <div className="w-full text-lg font-[600] font-mono underline py-2">
-            {category}
+          <div className="w-full text-lg font-[600] font-mono underline py-2">{category || ""}</div>
+          <div className="w-full text-xl font-[600]">{title || ""}</div>
+          <div className="w-full h-full relative text-md left-[120%] group-hover:left-0 p-4 transition-all">
+            {description || ""}
           </div>
-          <div className="w-full text-xl font-[600]">{title}</div>
-          <div className="w-full relative text-md left-[120%] group-hover:left-0 p-4 transition-all">
-            {text}
-          </div>
-          <a
-            href={link}
+          <div
+            href={"#"}
             className="absolute bottom-[-20px] group-hover:bottom-[8px] transition-all right-2 text-right font-[600] underline underline-offset-2 decoration-green-500"
           >
             Learn more
-          </a>
+          </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }
 
-export default function CompletedProjects() {
-  const data = [
-    {
-      title:
-        "Building a Smarter Healthcare System: The Role of AI and Big Data",
-      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
-      category: "Healthcare",
-      img_src: "/aboutBg.jpg",
-      link: "#",
-    },
-    {
-      title:
-        "Building a Smarter Healthcare System: The Role of AI and Big Data",
-      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
-      category: "Healthcare",
-      img_src: "/aboutBg.jpg",
-      link: "#",
-    },
-    {
-      title:
-        "Building a Smarter Healthcare System: The Role of AI and Big Data",
-      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
-      category: "Healthcare",
-      img_src: "/aboutBg.jpg",
-      link: "#",
-    },
-    {
-      title:
-        "Building a Smarter Healthcare System: The Role of AI and Big Data",
-      text: "This essay explores the potential of AI and big data to revolutionize healthcare. It examines both the advantages, like using machine learning for heart disease prediction, and challenges, such as ethical considerations.",
-      category: "Healthcare",
-      img_src: "/aboutBg.jpg",
-      link: "#",
-    },
-  ];
+export default function Projects({ data }) {
   return (
     <>
-      <Heading text="Ongoing Projects" id="ongoing" />
+      <Heading text="Ongoing Projects" id="completed" />
+        {data.length==0 && <div>Fetching...</div>}
       <div className="w-full lg:px-10 my-10 flex justify-center items-center flex-wrap gap-8">
         {data.map((props, id) => (
           <Card key={id} {...props} />
