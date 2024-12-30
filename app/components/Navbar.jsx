@@ -22,7 +22,7 @@ export default function Navbar  () {
         <div className="flex justify-between items-center h-16">
           <a href="/" className="flex-shrink-0 flex items-center">
           <img src="/logo2.png" alt="" className='object-contain w-10 mr-2'/>
-            <div className="text-[#EAD8B1] font-bold text-xl">MythoQuantum</div>
+            <div className="text-[#EAD8B1] font-bold md:text-xl text-sm"><div className="flex flex-col md:flex-row"><div className='mr-1'>MythoQuantum</div><div>Explorers</div></div></div>
           </a>
 
           {/* Desktop Menu */}
