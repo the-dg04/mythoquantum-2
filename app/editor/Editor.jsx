@@ -41,7 +41,7 @@ export default function BlockNote() {
   }, [activeProjectId]);
 
   let editor = null;
-  if (typeof document !== 'undefined') {
+  if (typeof document !== "undefined") {
     editor = useCreateBlockNote();
   }
   const [loading, setLoading] = useState(true);
@@ -86,43 +86,50 @@ export default function BlockNote() {
           setDescription(e.target.value);
         }}
       />
-      <div className="text-xl p-4">Image URL</div>
-      <input
-        type="text"
-        className="border border-black w-full"
-        value={imgUrl}
-        onChange={(e) => {
-          setImgUrl(e.target.value);
-        }}
-      />
-      <div className="text-xl p-4">Category</div>
-      <input
-        type="text"
-        className="border border-black w-full"
-        value={category}
-        onChange={(e) => {
-          setCategory(e.target.value);
-        }}
-      />
-      <div className="flex">
-        <div className="text-xl p-4">Status</div>
-        <select
-          name="status"
-          onChange={(e) => {
-            setStatus(e.target.value);
-          }}
-          value={status}
-        >
-          <option value="Completed" key={1}>
-            Completed
-          </option>
-          <option value="Ongoing" key={2}>
-            Ongoing
-          </option>
-          <option value="Upcoming" key={3}>
-            Upcoming
-          </option>
-        </select>
+      <div className="flex flex-col sm:flex-row w-full justify-between min-w-[350px]">
+        <div className="flex flex-col w-full">
+          <div className="text-xl p-4">Image URL</div>
+          <textarea
+            type="text"
+            className="border border-black w-full"
+            value={imgUrl}
+            onChange={(e) => {
+              setImgUrl(e.target.value);
+            }}
+          />
+          <div className="text-xl p-4">Category</div>
+          <input
+            type="text"
+            className="border border-black w-full"
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+          />
+          <div className="flex">
+            <div className="text-xl p-4">Status</div>
+            <select
+              name="status"
+              onChange={(e) => {
+                setStatus(e.target.value);
+              }}
+              value={status}
+            >
+              <option value="Completed" key={1}>
+                Completed
+              </option>
+              <option value="Ongoing" key={2}>
+                Ongoing
+              </option>
+              <option value="Upcoming" key={3}>
+                Upcoming
+              </option>
+            </select>
+          </div>
+        </div>
+        <div className="w-[300px] h-full p-4 flex-shrink-0 flex">
+          <img src={imgUrl || "https://placehold.co/240x320"} alt="image" className="w-[240px] h-[320px] border border-black object-cover"/>
+        </div>
       </div>
       <div className="text-xl p-4">Body</div>
       {!loading && (

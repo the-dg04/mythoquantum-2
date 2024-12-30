@@ -7,44 +7,48 @@ export default function RequestCard(props) {
   const [editMode, setEditMode] = useState(false);
   const [title, setTitle] = useState(props.title);
   const { activeProjectId, setActiveProjectId } = useContext(ProjectContext);
-  const {startLoad,endLoad}=useContext(LoadingContext)
+  const { startLoad, endLoad } = useContext(LoadingContext);
 
   const handleEditToggle = () => {
     if (editMode) {
-        startLoad()
+      startLoad();
       fetch(`/api/updateRequestById/${props.id}`, {
         method: "PATCH",
         body: JSON.stringify({
           title: title,
         }),
-      }).then((res) => {
-        if (res.status == 200) {
-          res.json().then((res) => {
-            console.log(res);
+      })
+        .then((res) => {
+          if (res.status == 200) {
+            res.json().then((res) => {
+              console.log(res);
+            });
+            //   props.getProjects();
+          }
+        })
+        .finally((res) => {
+          endLoad();
         });
-        endLoad()
-        //   props.getProjects();
-        }
-      });
     }
     setEditMode(!editMode);
   };
 
   const handleDelete = () => {
-    startLoad()
-    fetch(`/api/deleteRequestById/${props.id}`, { method: "DELETE" }).then(
-      (res) => {
+    startLoad();
+    fetch(`/api/deleteRequestById/${props.id}`, { method: "DELETE" })
+      .then((res) => {
         if (res.status == 200) {
           props.getProjects().then((res) => {
             if (props.id == activeProjectId) {
-                console.log(res)
+              console.log(res);
               setActiveProjectId(res[0]._id);
             }
           });
         }
-        endLoad()
-      }
-    );
+      })
+      .finally((res) => {
+        endLoad();
+      });
   };
 
   return (

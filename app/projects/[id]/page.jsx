@@ -55,6 +55,7 @@ export default function Team() {
             margin: "20px",
             borderRadius: "10px",
           }}
+          className="sm:w-[80%] w-[90%] xl:w-[1200px]"
         />
         <Footer />
       </div>

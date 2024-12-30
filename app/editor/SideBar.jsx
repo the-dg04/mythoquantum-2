@@ -12,13 +12,11 @@ export default function SideBar(props) {
   const {startLoad,endLoad} = useContext(LoadingContext)
 
   const getProjects = () => {
-    startLoad()
     return fetch("/api/getAllRequests", { method: "GET" })
       .then((res) => res.json())
       .then((res) => {
         console.log(res.result)
         setProjectList([...res.result]);
-        endLoad()
         return res.result;
       });
   };
@@ -27,15 +25,21 @@ export default function SideBar(props) {
     startLoad()
     fetch("/api/newRequest", { method: "GET" }).then((res) => {
       if (res.status == 201) {
-        getProjects();
-        endLoad()
+        getProjects().then((res)=>{
+          setActiveProjectId(res[res.length-1]._id)
+        }).finally((res)=>{
+          endLoad()
+        });
       }
     });
   };
 
   useEffect(() => {
+    startLoad()
     getProjects().then((res) => {
       setActiveProjectId((val) => (res.length > 0 ? res[0]._id : ""));
+    }).finally((res)=>{
+      endLoad()
     });
   }, []);
 
@@ -50,8 +54,8 @@ export default function SideBar(props) {
       >
         <div className="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <NewRequestButton createNewRequest={newProject}/>
             <div className="flex-1 px-3 bg-white divide-y space-y-1">
+            <NewRequestButton createNewRequest={newProject}/>
               {projectList.map((project, idx) => (
                 <RequestCard
                   key={idx}

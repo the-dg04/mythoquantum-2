@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 function Card({ title, description, category, _id, imgUrl }) {
   return (
     <>
-      <a href={"#"} className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
+      <a href={`/projects/${_id}`} className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
         <img
           src={imgUrl || ""}
           alt=""
@@ -16,7 +16,7 @@ function Card({ title, description, category, _id, imgUrl }) {
             {description || ""}
           </div>
           <div
-            href={"#"}
+            href={`/projects/${_id}`}
             className="absolute bottom-[-20px] group-hover:bottom-[8px] transition-all right-2 text-right font-[600] underline underline-offset-2 decoration-green-500"
           >
             Learn more
