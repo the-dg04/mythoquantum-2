@@ -10,6 +10,9 @@ import dynamic from "next/dynamic";
 export default function uitest() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [showBackdrop, setShowBackdrop] = useState(false);
+
+  const [secret,setSecret]=useState("")
+  const [validated,setValidated]=useState(false)
   
   const [activeProjectId, setActiveProjectId] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,8 +39,20 @@ export default function uitest() {
   return (
     <LoadingContext.Provider value={{loading,startLoad,endLoad}}>
     <ProjectContext.Provider value={{activeProjectId,setActiveProjectId}}>
+      {!validated && (
+        <>
+        <form className="w-screen h-screen flex flex-col justify-center items-center p-8 gap-10" onSubmit={(e)=>{
+          e.preventDefault()
+          setValidated((val)=>secret==process.env.NEXT_PUBLIC_SECRET)
+          setSecret((val)=>"")
+        }}>
+          <input type="text" value={secret} onChange={(e)=>{setSecret(e.target.value)}} className="w-full text-center placeholder:text-center border border-black" placeholder="Enter Secret"/>
+          <button type="submit" className="border border-black px-4 py-2 rounded-md block">Enter</button>
+        </form>
+        </>
+      )}
         {loading && <div className="absolute w-screen h-screen z-[50] bg-black bg-opacity-40 flex items-center justify-center">Loading...</div>}
-      <div className="flex flex-col">
+     {validated && ( <div className="flex flex-col">
         <NavBar
           showSidebar={showSidebar}
           showBackdrop={showBackdrop}
@@ -53,16 +68,13 @@ export default function uitest() {
             <main>
               <div className="w-full">
                 <div className="flex flex-row w-full">
-                  {/* {requestComponent} */}
                 </div>
-                {/* {MethodComponent}
-                {responseComponent} */}
                 <Editor />
               </div>
             </main>
           </div>
         </div>
-      </div>
+      </div>)}
     </ProjectContext.Provider>
     </LoadingContext.Provider>
   );
