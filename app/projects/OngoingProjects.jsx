@@ -5,7 +5,7 @@ function Card({ title, description, category, _id, imgUrl }) {
     <>
       <a href={`/projects/${_id}`} className="w-[300px] h-[400px] relative overflow-hidden group transition-all">
         <img
-          src={imgUrl || ""}
+          src={imgUrl || "/projectDefault.jpg"}
           alt=""
           className="w-full h-full object-cover object-center absolute top-0 group-hover:scale-[2] origin-top-left transition-all"
         />
