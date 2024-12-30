@@ -1,0 +1,9 @@
+{
+    "installCommand":"npm install --force",
+    "crons":[
+        {
+            "path":"/api/getAllRequests",
+            "schedule":"0 0 1 * *"
+        }
+    ]
+}
