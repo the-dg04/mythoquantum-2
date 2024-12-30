@@ -16,7 +16,7 @@ export default function Navbar  () {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-[#001F3F] shadow-md z-10">
+    <nav className="fixed top-0 w-full bg-[#001F3F] shadow-md z-[50]">
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
