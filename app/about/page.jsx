@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center w-full bg-[#6A9AB0]">
+      <div className="flex flex-col items-center w-full bg-color-200">
       <div className="h-16"></div>
         <Hero />
         <Achievements />

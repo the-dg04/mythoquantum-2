@@ -29,7 +29,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center font-serif w-full text-black bg-[#6A9AB0] pt-10">
+      <div className="flex flex-col items-center font-serif w-full text-black bg-color-200 pt-10">
         <CompletedProjects data={data["Completed"]} />
         <OngoingProjects data={data["Ongoing"]} />
         <UpcomingProjects data={data["Upcoming"]} />

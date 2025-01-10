@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 function Card({ name, description, img_src }) {
   return (
     <>
-      <div className="w-[90vw] lg:h-[500px] flex flex-col lg:flex-row items-center justify-center rounded-lg my-4 bg-[#3A6D8C] overflow-hidden relative">
+      <div className="w-[90vw] lg:h-[500px] flex flex-col lg:flex-row items-center justify-center rounded-lg my-4 bg-color-300 overflow-hidden relative">
         <div className="lg:w-1/2 lg:h-full w-full h-1/2 flex lg:justify-end justify-center z-[2]">
           <motion.img
             src={img_src}
@@ -20,7 +20,7 @@ function Card({ name, description, img_src }) {
           />
         </div>
         <motion.div
-          className="absolute w-[50vw] h-[180%] top-[-40%] left-[-50px] bg-[#EAD8B1] rounded-r-full lg:block hidden"
+          className="absolute w-[50vw] h-[180%] top-[-40%] left-[-50px] bg-color-100 rounded-r-full lg:block hidden"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ delay: 0.2 }}
@@ -30,10 +30,10 @@ function Card({ name, description, img_src }) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >
-          <div className="lg:text-2xl text-lg font-[600] text-[#EAD8B1] lg:mb-4 border-b border-[#EAD8B1]">
+          <div className="lg:text-2xl text-lg font-[600] text-color-100 lg:mb-4 border-b border-color-100">
             {name}
           </div>
-          <div className="lg:text-lg text-md font-[400] text-[#EAD8B1]">
+          <div className="lg:text-lg text-md font-[400] text-color-100">
             {description}
           </div>
         </motion.div>
@@ -46,12 +46,12 @@ function Capability({ text }) {
   return (
     <>
       <motion.div
-        className="w-[300px] h-[200px] bg-[#EAD8B1] rounded-lg flex-shrink-0 flex justify-center items-center shadow-lg p-4 text-lg text-center relative"
+        className="w-[300px] h-[200px] bg-color-100 rounded-lg flex-shrink-0 flex justify-center items-center shadow-lg p-4 text-lg text-center relative"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
       >
         {text}
-        <motion.div className="absolute w-[60%] h-[5px] rounded-full bg-[#6A9AB0] bottom-2" initial={{y:16}} whileInView={{y:0}} transition={{delay:0.2}}></motion.div>
+        <motion.div className="absolute w-[60%] h-[5px] rounded-full bg-color-200 bottom-2" initial={{y:16}} whileInView={{y:0}} transition={{delay:0.2}}></motion.div>
       </motion.div>
     </>
   );
@@ -63,7 +63,7 @@ export default function Services() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center w-full bg-[#6A9AB0]">
+      <div className="flex flex-col items-center w-full bg-color-200">
         <div className="h-16"></div>
         <Card key={index} {...data[index]} />
         <Heading text="Capabilities" id="capabilities" />

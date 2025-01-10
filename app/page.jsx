@@ -6,13 +6,15 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Slider from "./landingPage/Slider";
 import Clients from "./landingPage/Clients";
+import Hero2 from "./landingPage/Hero2";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-        <Slider />
-      <div className="flex flex-col items-center w-full bg-[#6A9AB0]">
+        {/* <Slider /> */}
+        <Hero2 />
+      <div className="flex flex-col items-center w-full bg-color-200">
         <Hero />
         <Services />
         <Clients />

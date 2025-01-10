@@ -57,7 +57,7 @@ export default function Hero() {
             efficiency, resilience, and long-term success.
           </div>
         </motion.div>
-        <motion.div className="hidden lg:block absolute bottom-[-300px] right-[-300px] h-[600px] w-[600px] rounded-full bg-[#EAD8B1] origin-right" style={{scale:scrollYProgress,opacity:opacityProgress}}></motion.div>
+        <motion.div className="hidden lg:block absolute bottom-[-300px] right-[-300px] h-[600px] w-[600px] rounded-full bg-color-100 origin-right" style={{scale:scrollYProgress,opacity:opacityProgress}}></motion.div>
       </div>
     </>
   );

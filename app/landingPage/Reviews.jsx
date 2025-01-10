@@ -5,7 +5,7 @@ import Heading from "../components/Heading";
 
 function ReviewCard({ name, title, text, img_src }) {
   return (
-    <div className="w-[300px] sm:w-[350px] h-[400px] bg-[#3A6D8C] text-[#EAD8B1] flex-shrink-0 flex flex-col justify-center items-center p-4 rounded-md relative">
+    <div className="w-[300px] sm:w-[350px] h-[400px] bg-color-300 text-color-100 flex-shrink-0 flex flex-col justify-center items-center p-4 rounded-md relative">
       <div className="h-[150px] flex justify-center">
         <Image src={img_src} width={150} height={150} alt="image" />
       </div>
@@ -32,7 +32,7 @@ function ReviewCard({ name, title, text, img_src }) {
   );
 }
 
-// w-[100px] h-[100px] right-[-70px] bg-[#EAD8B1] z-[2] rounded-full opacity-60
+// w-[100px] h-[100px] right-[-70px] bg-color-100 z-[2] rounded-full opacity-60
 
 export default function Reviews() {
   const data = [

@@ -5,7 +5,7 @@ export default function Empower() {
   return (
     <>
       <div
-        className="xl:w-[1280px] flex lg:flex-row flex-col lg:justify-center items-center text-[#EAD8B1] w-[90vw] min-h-[400px] rounded-3xl mb-20 bg-gradient-to-br from-[#001F3F] via-[#3A6D8C] to-[#EAD8B1]"
+        className="xl:w-[1280px] flex lg:flex-row flex-col lg:justify-center items-center text-color-100 w-[90vw] min-h-[400px] rounded-3xl mb-20 bg-gradient-to-br from-color-400 via-color-300 to-color-100"
         // initial={{x:-50,opacity:0}}
         // whileInView={{x:0,opacity:1}}
         // transition={{duration:1,type:"spring"}}

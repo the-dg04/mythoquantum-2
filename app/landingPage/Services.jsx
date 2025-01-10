@@ -6,23 +6,23 @@ import { ServicesData } from "../services/data";
 function Card({ name, description, index }) {
   return (
     <>
-      <div className="lg:w-1/4 w-[80%] bg-[#3A6D8C] h-[400px] rounded-lg flex flex-col items-center overflow-hidden shadow-lg relative">
-        <div className="w-full h-fit p-10 text-4xl font-[600] text-[#EAD8B1]">
+      <div className="lg:w-1/4 w-[80%] bg-color-300 h-[400px] rounded-lg flex flex-col items-center overflow-hidden shadow-lg relative">
+        <div className="w-full h-fit p-10 text-4xl font-[600] text-color-100">
           {name}
         </div>
-        {/* <div className="w-full h-fit px-10 text-sm font-[600] text-[#EAD8B1]">
+        {/* <div className="w-full h-fit px-10 text-sm font-[600] text-color-100">
           {description}
         </div> */}
         <motion.a
           href={`/services/${index}`}
-          className="absolute bottom-10 z-[2] px-4 py-2 rounded-lg font-bold text-[#EAD8B1] hover:scale-110 bg-[#3A6D8C] transition-all"
+          className="absolute bottom-10 z-[2] px-4 py-2 rounded-lg font-bold text-color-100 hover:scale-110 bg-color-300 transition-all"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >
           Learn more
         </motion.a>
         <motion.div
-          className="absolute h-[400px] lg:h-[20vw] w-[400px] lg:w-[20vw] bottom-[-180px] lg:bottom-[-7vw] bg-[#EAD8B1] rounded-t-full"
+          className="absolute h-[400px] lg:h-[20vw] w-[400px] lg:w-[20vw] bottom-[-180px] lg:bottom-[-7vw] bg-color-100 rounded-t-full"
           initial={{ y: "100px" }}
           whileInView={{ y: "0" }}
         ></motion.div>

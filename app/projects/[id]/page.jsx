@@ -30,14 +30,14 @@ export default function Team() {
   return (
     <>
       <Navbar />
-      <motion.div className="absolute w-[380px] left-[calc(50vw-200px)] top-[120px] h-[140px] rounded-full bg-[#EAD8B1]" initial={{scaleX:0}} whileInView={{scaleX:1}} transition={{delay:1,duration:0.3,type:"spring"}}></motion.div>
-      <div className="w-full flex flex-col items-center bg-[#6A9AB0] z-[10]">
+      <motion.div className="absolute w-[380px] left-[calc(50vw-200px)] top-[120px] h-[140px] rounded-full bg-color-100" initial={{scaleX:0}} whileInView={{scaleX:1}} transition={{delay:1,duration:0.3,type:"spring"}}></motion.div>
+      <div className="w-full flex flex-col items-center bg-color-200 z-[10]">
         <Heading text={project.title} id="title" />
         <div className="flex gap-2 pb-4 mx-2 z-[10]">
-          <div className="px-4 p-2 bg-[#3A6D8C] text-[#EAD8B1] rounded-lg">
+          <div className="px-4 p-2 bg-color-300 text-color-100 rounded-lg">
             Status: {project.status}
           </div>
-          <div className="px-4 p-2 bg-[#3A6D8C] text-[#EAD8B1] rounded-lg">
+          <div className="px-4 p-2 bg-color-300 text-color-100 rounded-lg">
             Category: {project.category}
           </div>
         </div>

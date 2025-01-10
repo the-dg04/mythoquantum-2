@@ -4,20 +4,20 @@ import { motion } from "motion/react";
 function AchievementCard({ number, text }) {
   return (
     <motion.div
-      className="w-full bg-[#3A6D8C] rounded-lg h-full border-yellow-500 flex flex-col items-center justify-center relative"
+      className="w-full bg-color-300 rounded-lg h-full border-yellow-500 flex flex-col items-center justify-center relative"
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, type: "spring" }}
     >
       <motion.div
-        className="text-4xl font-bold w-20 h-20 flex items-center justify-center aspect-square rounded-full bg-[#EAD8B1] text-[#001F3F]"
+        className="text-4xl font-bold w-20 h-20 flex items-center justify-center aspect-square rounded-full bg-color-100 text-color-400"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.7, delay: 0.3, type: "spring" }}
       >
         {number}+
       </motion.div>
-      <div className="text-md text-[#EAD8B1] absolute bottom-1">{text}</div>
+      <div className="text-md text-color-100 absolute bottom-1">{text}</div>
     </motion.div>
   );
 }

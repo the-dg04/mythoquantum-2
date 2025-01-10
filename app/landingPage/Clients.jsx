@@ -80,14 +80,14 @@ export default function Clients() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="lg:w-1/2 lg:h-full bg-[#3A6D8C] w-full h-1/2 flex flex-col p-10">
-                <div className="lg:text-4xl text-2xl font-[600] text-[#EAD8B1] lg:mb-4">{client.name}</div>
-                <div className="lg:text-2xl text-lg font-[400] text-[#EAD8B1]">{client.description}</div>
+              <div className="lg:w-1/2 lg:h-full bg-color-300 w-full h-1/2 flex flex-col p-10">
+                <div className="lg:text-4xl text-2xl font-[600] text-color-100 lg:mb-4">{client.name}</div>
+                <div className="lg:text-2xl text-lg font-[400] text-color-100">{client.description}</div>
               </div>
             </div>
           ))}
         </div>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 py-2 opacity-50 px-4 bg-[#001F3F] rounded-full">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 py-2 opacity-50 px-4 bg-color-400 rounded-full">
           {clients.map((_, index) => (
             <button
               key={index}

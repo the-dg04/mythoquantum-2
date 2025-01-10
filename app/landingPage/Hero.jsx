@@ -29,7 +29,7 @@ export default function Hero() {
             className="object-fit"
             alt="image"
           /> */}
-          <div className="p-4 lg:w-fit w-[80vw] rounded-lg bg-[#3A6D8C] text-[#EAD8B1] relative">
+          <div className="p-4 lg:w-fit w-[80vw] rounded-lg bg-color-300 text-color-100 relative">
             <motion.div
               className="w-full p-4 lg:text-5xl text-4xl font-[900]  py-6"
               initial={{ y: 20, opacity: 0 }}
@@ -50,7 +50,7 @@ export default function Hero() {
               <br />
               of light
             </motion.div>
-            <motion.div className="absolute w-28 h-28 bg-[#EAD8B1] bottom-[-32px] right-[-32px] rounded-full" initial={{scale:0}} whileInView={{scale:1}} transition={{delay:0.5}}></motion.div>
+            <motion.div className="absolute w-28 h-28 bg-color-100 bottom-[-32px] right-[-32px] rounded-full" initial={{scale:0}} whileInView={{scale:1}} transition={{delay:0.5}}></motion.div>
           </div>
         </div>
       </div>

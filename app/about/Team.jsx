@@ -6,9 +6,9 @@ import Heading from "../components/Heading";
 function Card({ name, position, linkedin, img_src }) {
   return (
     <>
-      <div className="lg:w-[40vw] w-[80vw] flex-shrink-0 h-[200px] bg-[#3A6D8C] rounded-lg z-[2] relative overflow-hidden flex flex-col sm:items-end items-center">
+      <div className="lg:w-[40vw] w-[80vw] flex-shrink-0 h-[200px] bg-color-300 rounded-lg z-[2] relative overflow-hidden flex flex-col sm:items-end items-center">
         <motion.div
-          className="absolute left-[-100px] md:block hidden w-[300px] h-[300px] top-[-50px] bg-[#EAD8B1] rounded-full"
+          className="absolute left-[-100px] md:block hidden w-[300px] h-[300px] top-[-50px] bg-color-100 rounded-full"
           initial={{ x: "-150px" }}
           whileInView={{ x: "0" }}
         ></motion.div>
@@ -19,7 +19,7 @@ function Card({ name, position, linkedin, img_src }) {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
         />
-        <div className="w-[80%] md:w-[calc(80vw-200px)] lg:w-[calc(40vw-200px)] h-full py-4 px-4 md:px-10 text-[#EAD8B1] relative">
+        <div className="w-[80%] md:w-[calc(80vw-200px)] lg:w-[calc(40vw-200px)] h-full py-4 px-4 md:px-10 text-color-100 relative">
           <motion.div
             className="text-3xl font-[600]"
             initial={{ opacity: 0 }}
@@ -38,7 +38,7 @@ function Card({ name, position, linkedin, img_src }) {
           </motion.div>
           <a
             href={linkedin}
-            className="absolute bottom-4 right-4 text-[#3A6D8C] p-1 bg-[#EAD8B1] rounded-lg"
+            className="absolute bottom-4 right-4 text-color-300 p-1 bg-color-100 rounded-lg"
           >
             <Linkedin />
           </a>
