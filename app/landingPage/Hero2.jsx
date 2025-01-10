@@ -12,7 +12,7 @@ const Phone = ({ scrollYProgress }) => {
   const translateProgress = useTransform(
     scrollYProgress,
     [0, 0.8],
-    ["65vh", "0vh"]
+    ["60vh", "0vh"]
   );
   return (
     <>
